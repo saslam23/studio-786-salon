@@ -1,0 +1,286 @@
+
+/* HOME */
+
+.home {
+  background-color: black;
+  height: 830px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.carousel-banner {
+  height: 950px;
+}
+
+.banner {
+  width: 100%;
+  height: 600px;
+}
+
+.caption{
+  border-style: solid;
+ top:50%;
+}
+
+.bannerHeader{
+  color: white;
+  font-size: 40pt;
+  font-family: Sriracha;
+}
+
+.bannerSpecials{
+  left:23%;
+  font-size: 20pt;
+  font-family: Lemonada;
+}
+
+.bannerContact{
+  left: 33%;
+  font-size: 20pt;
+  font-family: Lemonada;
+}
+
+
+
+/*SERVICES*/
+.services {
+  background-color: black;
+  height: 1500px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.servicePictures {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.picture {
+  text-align: center;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 1px solid black;
+  box-shadow: white 0px 0px 10px;
+}
+
+.outerPicture {
+  margin: auto;
+  padding: 20px;
+}
+
+button {
+  height: 47px;
+  width: 175px;
+}
+
+
+/* ABOUT*/
+
+.about {
+  background-color: rgb(32, 30, 30);
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/*CONTACT*/
+
+.contacts {
+  background-color: black;
+  height: 600px;
+  overflow-x: hidden;
+}
+.textArea{
+  width:300px;
+}
+
+
+/* FOOTER*/
+
+.footer {
+  background-color:  rgb(32, 30, 30);
+  height:500px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+}
+
+.footerFont{
+  font-size:16pt;
+  text-align: right;
+}
+
+.footerLogo{
+  text-align:center;
+}
+
+.copywright{
+  height: 50px;
+  background-color: black;
+}
+
+
+/* MISCELLANEOUS*/
+h1 {
+  color: #fc9ead;
+  text-align: center;
+  padding: 10px;
+}
+
+h2 {
+  color: #f3dbdf;
+}
+
+h3 {
+  font-size: 12pt;
+  color: #fc9ead;
+}
+
+h4{
+  padding-left: 35px;
+}
+
+
+.studiologo {
+  margin: auto;
+  width: 150px;
+  height: 65px;
+}
+
+.navLinks {
+  font-size: 12pt;
+  padding: 0px 45px 0px 0px;
+}
+
+.underline {
+  width: 425px;
+}
+
+.upToDate {
+  text-align: center;
+}
+
+
+.image{
+  -webkit-filter: grayscale(1);
+  height:125px;
+  width:125px;
+}
+
+.image:hover{
+ -webkit-filter: grayscale(0);
+ -webkit-transition: ease-in-out;
+}
+
+
+/*MEDIA QUERIES*/
+
+@media only screen and (max-width:1653px){
+  .home{
+    height:700px;
+}
+}
+
+@media only screen and (max-width:1299px){
+.home{
+  height:550px;
+}
+.caption{
+  top:25%;
+  height: 250px;
+}
+.bannerHeader{
+  font-size: 27pt;
+}
+.bannerSpecials{
+  font-size: 12pt;
+}
+.bannerContact{
+  font-size: 15pt;
+}
+.carousel-banner {
+  height: 700px;
+}
+
+
+
+}
+
+@media only screen and (max-width:1049px){
+  .home{
+    height:500px;
+  }
+  .carousel-banner {
+    height: 600px;
+  }
+  .textArea{
+    width:250px;
+  }
+  }
+
+
+  @media only screen and (max-width:990px){
+  .home{
+      height:400px;
+    }
+  .carousel-banner {
+      height: 500px;
+    }  
+  .services{
+    overflow-y:hidden;
+    height:1800px;
+  }
+  .highlights{
+    display:none;
+  }
+  .servicePictures{
+  padding-left: 50px;
+  }
+  .caption{
+    height: 210px;
+  }
+  .haircut{
+    padding-left: 175px;
+  }
+  .textArea{
+    width:225px;
+  }
+  }
+
+@media only screen and (max-width:767px){
+  .servicePictures{
+    display: none;
+  }
+  .services{
+    height:1650px;
+  }
+  .hairService{
+    margin-top: 5rem;
+  }
+  .footer{
+    height: 700px;
+  }
+  .footerFont{
+    text-align:center;
+  }
+  .bannerHeader{
+    font-size: 20pt;
+  
+  }
+}
+
+@media only screen and (max-width:539px){
+  .contacts1{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1em;
+    grid-row-gap: 100px;
+  }
+  .footer{
+    height: 850px;
+  }
+  h4{
+    padding-left: 0px;
+  }
+}
