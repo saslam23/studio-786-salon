@@ -44,7 +44,7 @@ export default class Contacts extends Component {
       message: this.state.message
     }
 
-    axios.post("http://localhost:8080/email", messageForm)
+    axios.post("/email", messageForm)
       .then(res => console.log(res.data))
 
     window.location = "/message"
