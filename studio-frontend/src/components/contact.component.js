@@ -6,13 +6,13 @@ export default class Contacts extends Component {
     super(props);
 
     this.onChangeEmail = this.onChangeEmail.bind(this);
-    this.onChangePhone = this.onChangePhone.bind(this);
+    this.onChangeSubject = this.onChangeSubject.bind(this);
     this.onChangeMessage = this.onChangeMessage.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       email: '',
-      phone: '',
+      subject: '',
       message: '',
     }
   }
@@ -23,9 +23,9 @@ export default class Contacts extends Component {
     })
   }
 
-  onChangePhone(e) {
+  onChangeSubject(e) {
     this.setState({
-      phone: e.target.value
+      subject: e.target.value
     })
   }
 
@@ -86,9 +86,9 @@ export default class Contacts extends Component {
                 <input id="email" type="email" value={this.state.email} onChange={this.onChangeEmail} className="form-control-md" />
               </div>
               <div>
-                <label>Phone Number</label>
+                <label>Subject</label>
                 <br></br>
-                <input id="phone" value={this.state.phone} onChange={this.onChangePhone} className="form-control-md" />
+                <input id="Subject" value={this.state.phone} onChange={this.onChangeSubject} className="form-control-md" />
               </div>
               <div>
                 <label>Message</label>

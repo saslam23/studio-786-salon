@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
 const cors = require("cors");
-const nodemailer = require("nodemailer");
+const sendMail = require("./mail");
 const path = require("path");
 
 
@@ -58,49 +58,21 @@ app.post("/signup", (req, res) => {
 });
 
 app.post("/email", (req, res) => {
-  const pass = process.env.PASS_KEY;
-  const htmlEmail = `
-    <h3>Contact Details</h3>
-    <ul>
-      <li>Email: ${req.body.email}</li>
-      <li>Phone:${req.body.phone}</li>
-    </ul>
-    <h3>Message</h3>
-    <p>${req.body.message}</p>  
-    `
 
-  let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
-    auth: {
-      user: 'studio786inquiry@gmail.com',
-      pass: pass
-    },
-    tls: {
-      rejectUnauthorized: false
-    }
-  })
+  const email = req.body.email;
+  const subject = req.body.subject;
+  const text = req.body.message;
 
-  let mailOptions = {
-    from: "person@s786salon.com",
-    to: 'studio786inquiry@gmail.com',
-    replyTo: "",
-    subject: "New Message",
-    text: req.body.message,
-    html: htmlEmail
-  }
-
-  transporter.sendMail(mailOptions, (err, info) => {
+  sendMail(email, subject, text, function (err, data) {
     if (err) {
-      return console.log(err);
+      res.status(500).json("Internal Error")
+    } else {
+      res.json("Email has been sent!")
     }
-    console.log("preview URL: %s",
-      nodemailer.getTestMessageUrl(info));
-    console.log("Message sent :%s", info.messageId)
-    res.json("Message sent successfully")
   })
+
 });
+
 
 
 if (process.env.NODE_ENV === "production") {
