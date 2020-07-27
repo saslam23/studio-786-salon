@@ -28,7 +28,7 @@ app.post("/signup", (req, res) => {
 
   const jsonData = JSON.stringify(data);
 
-  const key = process.env.API_KEY;
+  const key = process.env.API_KEYY;
   const id = process.env.LIST_ID;
 
 
