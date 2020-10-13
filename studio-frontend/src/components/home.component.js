@@ -30,7 +30,7 @@ export default class Home extends Component {
               <div className="carousel-caption d-md-block caption animated fadeInUp">
                 <h1 className="bannerHeader"> Our Specials!</h1>
                 <p className="bannerSpecials">
-                  Mondays and Tuesdays Eyebrow Threading for $6
+                  Mondays and Tuesdays Eyebrow Threading for $8
                   <br></br>
                   <br></br>
                   Root Touch up and Partial Highlights for $60
