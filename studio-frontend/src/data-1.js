@@ -1,50 +1,46 @@
-const threading = {
+const services = [
+{
     id: 1,
     header: "Threading",
-    Types: ["Eyebrow", "Upper Lip", "Lower Lip", "Forehead", "Nose", "Chin", "Side burns", "Neck", "Full Face"]
-}
-
-const waxing = {
+    services: ["Eyebrow", "Upper Lip", "Lower Lip", "Forehead", "Nose", "Chin", "Side burns", "Neck", "Full Face"]
+},
+{
     id: 2,
     header: "Waxing",
-    Types: ["Eyebrow", "Upper Lip", "Lower Lip", "Forehead", "Nose", "Chin", "Side burns", "Neck", "Full Face"]
-}
-
-const hairServices = {
+    services: ["Eyebrow", "Upper Lip", "Lower Lip", "Forehead", "Nose", "Chin", "Side burns", "Neck", "Full Face"]
+},
+{
     id: 3,
     header: "Hair Services",
-    Types: ["Shampoo", "Men's Haircut", "Women's Haircut", "Children's Haircut", "Bangs", "Brazilian Blowout"]
-}
-
-const bodyWaxing = {
+    services: ["Shampoo", "Men's Haircut", "Women's Haircut", "Children's Haircut", "Bangs", "Brazilian Blowout"]
+},
+{
     id: 4,
     header: "Body Waxing",
-    Types: ["Full Arms", "Half Arms", "Full Legs", "Half Legs", "Under Arms", "Stomach", "Full Back", "Half Back", "Full Body"]
-}
-
-const color = {
+    services: ["Full Arms", "Half Arms", "Full Legs", "Half Legs", "Under Arms", "Stomach", "Full Back", "Half Back", "Full Body"]
+},
+{
     id: 5,
     header: "Color",
-    Types: ["Single Application", "Partial Highlights", "Deep Condition", "Root Touch Up", "Henna Treatment", "Eyebrow Tinting"]
-}
-
-const facial = {
+    services: ["Single Application", "Partial Highlights", "Deep Condition", "Root Touch Up", "Henna Treatment", "Eyebrow Tinting"]
+},
+{
     id: 6,
     header: "Facial",
-    Types: ["Deep Cleansing", "Mini Facial", "Gold Facial", "Diamond Facial", "Herbal Facial", "Face Bleach", "Face Bleach w/ Facial"]
-}
-
-const specialOccasions = {
+    services: ["Deep Cleansing", "Mini Facial", "Gold Facial", "Diamond Facial", "Herbal Facial", "Face Bleach", "Face Bleach w/ Facial"]
+},
+{
     id: 7,
     header: "Special Occasions",
-    Types: ["Bridal Makeup", "Party Makeup", "Prom Night"]
-}
-
-const makeup = {
+    services: ["Bridal Makeup", "Party Makeup", "Prom Night"]
+},
+{
     id: 8,
     header: "Makeup",
-    Types: ["Hairstyle"]
+    services: ["Hairstyle"]
 }
+]
+
 
 
 const missionStatement = {
@@ -55,4 +51,35 @@ const missionStatement = {
         "It is our goal to make sure the client feels relaxed, heard and welcomed."
 }
 
-export { threading, waxing, hairServices, bodyWaxing, color, facial, specialOccasions, makeup, missionStatement };
+const hours = [
+    {
+        day:'Monday',
+        time:'11AM–4PM'
+    },
+    {
+        day:'Tuesday',
+        time:'12–6PM'
+    },
+    {
+        day:'Wednesday',
+        time:'12AM–6PM'
+    },
+    {
+        day:'Thursday',
+        time:'12–6PM'
+    },
+    {
+        day:'Friday',
+        time:'12–6PM'
+    },
+    {
+        day:'Saturday',
+        time:'12–6PM'
+    },
+    {
+        day:'Sunday',
+        time:'Closed'
+    },
+]
+
+export { services, missionStatement, hours };

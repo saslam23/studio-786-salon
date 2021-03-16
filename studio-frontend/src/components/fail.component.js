@@ -1,19 +1,19 @@
-import React, { Component } from "react";
+import React from 'react'
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Button from 'react-bootstrap/Button';
 
-export default class Fail extends Component {
-    render() {
-        return (
-            <div >
-                <div style={{ backgroundColor: "#463434" }} className="jumbotron animated fadeIn">
-                    <h1 className="display-4">Uh Oh!</h1>
-                    <p style={{ color: "white", textAlign: "center" }} className="lead">Looks like something went wrong...</p>
-                    <hr className="my-4" />
-                    <p style={{ color: "white" }}>Go to the home page and try again</p>
-                    <div style={{ textAlign: "center" }} >
-                        <a className="btn btn-secondary btn-lg" href="/" role="button">Back to Home</a>
-                    </div>
-                </div>
-            </div>
-        )
-    }
+export default function Message() {
+    return (
+        <div >
+      <Jumbotron style={{backgroundColor:'rgb(78, 78, 78)', height:'50vh'} }>
+  <h1>Uh Oh!</h1>
+  <p style={{color:'white', textAlign:'center'}}>
+    Looks like somethign went wrong...
+  </p>
+  <p>
+  <a href="/"><button className="">Back to Home</button></a>
+  </p>
+</Jumbotron>
+    </div>
+    )
 }

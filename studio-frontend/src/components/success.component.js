@@ -1,18 +1,19 @@
-import React, { Component } from "react";
+import React from 'react'
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Button from 'react-bootstrap/Button';
 
-export default class Success extends Component {
-    render() {
-        return (
-            <div >
-                <div style={{ backgroundColor: "#463434" }} className="jumbotron animated fadeIn">
-                    <h1 style={{ color: "" }} className="display-4 fadeInUp">Thank you!</h1>
-                    <p style={{ color: "white", textAlign: "center" }} className="lead">You will now stay up to date on our latest deals and special events!</p>
-                    <hr className="my-4" />
-                    <div style={{ textAlign: "center" }}>
-                        <a className="btn btn-secondary btn-lg " href="/" role="button">Back to Home</a>
-                    </div>
-                </div>
-            </div>
-        )
-    }
+export default function Message() {
+    return (
+        <div >
+      <Jumbotron style={{backgroundColor:'rgb(78, 78, 78)', height:'50vh'} }>
+  <h1>Thank You!</h1>
+  <p style={{color:'white', textAlign:'center'}}>
+    You will now stay up to date on our latest deals and special events.
+  </p>
+  <p>
+  <a href="/"><button className="">Back to Home</button></a>
+  </p>
+</Jumbotron>
+    </div>
+    )
 }

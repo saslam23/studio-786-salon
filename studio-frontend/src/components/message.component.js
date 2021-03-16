@@ -1,18 +1,18 @@
-import React, { Component } from "react";
+import React from 'react'
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
-export default class Message extends Component {
-    render() {
-        return (
-            <div >
-                <div style={{ backgroundColor: "#463434" }} className="jumbotron animated fadeIn">
-                    <h1 className="display-4">Your Message has been sent!</h1>
-                    <p style={{ color: "white", textAlign: "center" }} className="lead">Please give up to 24 hours for a response back.  Thank you!</p>
-                    <hr className="my-4" />
-                    <div style={{ textAlign: "center" }}>
-                        <a className="btn btn-secondary btn-lg" href="/" role="button">Back to Home</a>
-                    </div>
-                </div>
-            </div>
-        )
-    }
+export default function Message() {
+    return (
+        <div >
+      <Jumbotron style={{backgroundColor:'rgb(78, 78, 78)', height:'50vh'} }>
+  <h1>Your Message has been sent!</h1>
+  <p style={{color:'white', textAlign:'center'}}>
+    Please give up to 24 hours for a response back. Thank you!
+  </p>
+  <p>
+  <a href="/"><button className="">Back to Home</button></a>
+  </p>
+</Jumbotron>
+    </div>
+    )
 }

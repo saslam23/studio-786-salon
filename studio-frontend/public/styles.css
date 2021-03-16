@@ -1,20 +1,50 @@
 
+html,body{
+  overflow-x:hidden;
+  margin:0;
+  padding:0;
+}
+
+.navi-item{
+  text-decoration:none;
+  color:white;
+  margin:1rem;
+}
+
+.navi-item:hover{
+  text-decoration: none;
+  color:white;
+  opacity:0.7;
+  transition: all 0.3s ease-in-out;
+}
+
 /* HOME */
 
-.home {
-  background-color: black;
-  height: 830px;
-  overflow-x: hidden;
-  overflow-y: hidden;
+.banner-layout {
+  margin:auto;
+  display:flex;
+  flex-direction:row;
+  background-color: rgb(78, 78, 78);
+  width:100%;
 }
 
-.carousel-banner {
-  height: 950px;
+.banner-info{
+  margin:15rem 15rem 15rem 10rem;
+  max-width:700px;
+  min-width:250px;
+  color:white;
+  width: 50%;
 }
 
-.banner {
-  width: 100%;
-  height: 600px;
+.banner-info-heading{
+  color:rgb(224, 198, 125);
+  font-size: 4rem;
+  max-width:300px;
+  min-width:200;
+}
+
+.banner-image {
+  width:50%;
 }
 
 .caption{
@@ -41,15 +71,99 @@
  font-family: DIN;
 }
 
+/* HOURS */
 
+.hours-layout{
+  display: flex;
+  flex-direction:row-reverse;
+  justify-content: space-between;
+  background-color:white;
+  width:100%;
+
+}
+
+.hours-info{
+  color:white;
+  margin:15rem 10rem 15rem 15rem;
+}
+
+.hours-info-heading{
+  color:rgb(224, 198, 125);
+}
+
+
+.hours-format{
+  display:flex;
+  min-width:250px;
+  color:black;
+}
+
+.hours-image{
+  width:50%;
+}
+
+/* WHO WE ARE*/
+.who-layout{
+  display:flex;
+  flex-direction:row;
+}
+
+.who-image{
+  width:50%;
+}
+
+.who-info{
+  margin:15rem 15rem 15rem 10rem;
+  max-width:700px;
+  min-width:250px;
+}
+
+.who-info-heading{
+  color:rgb(224, 198, 125);
+  font-size:2rem;
+}
 
 /*SERVICES*/
 .services {
-  background-color: #463434;
-  height: 1500px;
+  background-image: url("/assets/salon-2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 2000px;
+  height:140vh;
   overflow-x: hidden;
   overflow-y: hidden;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  position:relative;
+  
 }
+
+.services-margin{
+  margin-top:8rem;
+}
+
+.services-wrapper{
+position:absolute;
+top:0;
+left:10%;
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0, 0.4);
+width:80%;
+overflow-x:hidden;
+}
+
+.service-names{
+  color:white;
+  list-style-type: none;
+  width:175px;
+}
+
+.service-header{
+  color:rgb(224, 198, 125);
+  width:115px;
+  padding-bottom:15px;
+}
+
 
 .servicePictures {
   display: flex;
@@ -77,11 +191,6 @@
   padding: 0px;
 }
 
-button {
-  height: 47px;
-  width: 175px;
-}
-
 
 /* ABOUT*/
 
@@ -95,23 +204,67 @@ button {
 /*CONTACT*/
 
 .contacts {
-  background-color: #463434;
-  height: 600px;
+  display:flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+  background-color: rgb(78, 78, 78);
+  height: auto;
+  padding-bottom: 50px;
   overflow-x: hidden;
 }
 .textArea{
-  width:300px;
+  width:400px;
+  height:250px;
 }
 
+input{
+  width:100%;
+}
+
+.contact-details{
+  margin-top:4rem;
+  text-align:center;
+  color:white;
+}
+
+form{
+  margin-top:4rem;
+}
+
+button{
+  background-color:white;
+  border:none;
+  width:100%;
+}
+
+button:hover{
+  background-color: rgb(107, 106, 106);
+  color:white;
+  transition: all 0.2s ease-in-out;
+}
+
+label{
+  color:white;
+}
+
+.mid-banner{
+  width:100%;
+  height:auto;
+}
 
 /* FOOTER*/
 
 .footer {
   background-color:  rgb(32, 30, 30);
-  height:500px;
+  height:40vh;
   overflow-x: hidden;
   overflow-y: hidden;
 
+}
+
+.footer-info{
+  margin-top:3rem;
+  text-align:center;
 }
 
 .footerFont{
@@ -125,26 +278,49 @@ button {
 
 .copywright{
   height: 50px;
-  background-color: black;
+  background-color:  rgb(32, 30, 30);
+}
+.subscribe-form{
+  margin-top:5rem;
+}
+.subscribe, email{
+  width:500px;
+  background-color:  rgb(32, 30, 30);
+  border:0;
+  border-bottom: 1px solid white;
+  color:white;
 }
 
+.subscribe, placeholder{
+  padding-left: 5px;
+}
+.subscribe:hover{
+  border: 1px solid white;
+  transition: all 0.2s ease-in-out;
+
+}
+
+.submit-button{
+  width:500px;
+  margin-top:10px;
+}
 
 /* MISCELLANEOUS*/
 h1 {
-  color: #fdfdfd;
+  color:rgb(224, 198, 125);
   text-align: center;
   padding: 10px;
 }
 
-h2 {
-  font-family: DIN-BOLD;
-  color:  #ff9d9d;
+h2{
+  color:white;
+  text-align: center;
 }
 
-
 h3 {
-  font-size: 12pt;
-  color: #ff9d9d;
+  padding-top:1rem;
+  color:white;
+  text-align: center;
 }
 
 h4{
@@ -215,141 +391,75 @@ th{
 
 /*MEDIA QUERIES*/
 
-@media only screen and (max-width:1653px){
-  .home{
-    height:700px;
-}
-}
-
-@media only screen and (max-width:1299px){
-.home{
-  height:550px;
-}
-.caption{
-  top:25%;
-  height: 250px;
-}
-.bannerHeader{
-  font-size: 27pt;
-}
-.bannerSpecials{
-  font-size: 18pt;
-}
-.bannerContact{
-  font-size: 16pt;
-}
-.carousel-banner {
-  height: 700px;
-}
-
-
-
-}
-
-@media only screen and (max-width:1049px){
-  .home{
-    height:500px;
-  }
-  .carousel-banner {
-    height: 600px;
-  }
-  .textArea{
-    width:250px;
-  }
+@media only screen and (max-width:1120px){
+  .banner-info{
+    padding-right:4rem;
   }
 
+  .who-info{
+    padding-right:4rem;
+  }
+}
 
-  @media only screen and (max-width:990px){
-  .home{
-      height:400px;
+@media only screen and (max-width:1050px){
+  .services{
+    height:170vh;
+    background-size: 2370px;
+  }
+}
+
+@media only screen and (max-width:950px){
+.banner-layout{
+flex-wrap:wrap;
+}
+.hours-layout{
+flex-wrap:wrap;
+}
+.who-layout{
+flex-wrap:wrap;
+}
+
+.banner-image{
+  width:100%;
+}
+.hours-image{
+  width:100%;
+}
+.who-image{
+  width:100%;
+}
+.hours-info{
+  margin:15rem 20rem 15rem 13rem;
+  max-width:700px;
+  min-width:100px;
+}
+}
+
+@media only screen and (max-width:800px){
+  .services{
+    height:205vh;
+    background-size: 2450px;
+  }
+  }
+
+@media only screen and (max-width:763px){
+  .contacts{
+    flex-wrap:wrap;
+  }
+  }
+
+  @media only screen and (max-width:530px){
+    .hours-info{
+      padding-left:5rem;
+      max-width:700px;
+      min-width:100px;
     }
-  .carousel-banner {
-      height: 500px;
-    }  
-  .services{
-    overflow-y:hidden;
-    height:1800px;
-  }
-  .highlights{
-    display:none;
-  }
-  .caption{
-    height: 210px;
-  }
-  .facial{
-    padding-left: 80px;
-}
-  .hair{
-    margin-left: -55px;
-  }
-  .haircut{
-    padding-left: 175px;
-  }
-  .textArea{
-    width:225px;
-  }
-  }
-@media only screen and (max-width: 856px){
-  .haircut{
-    display:none;
-  }
-  .facial{
-    padding-left: 17rem;
-  }
-  p{
-    font-size:14pt;
-  }
-}
-@media only screen and (max-width:767px){
-  .servicePictures{
-    display: none;
-  }
-  .services{
-    height:1650px;
-  }
-  .hairService{
-    margin-top: 5rem;
-  }
-  .footer{
-    height: 700px;
-  }
-  .footerFont{
-    text-align:center;
-  }
-  .bannerHeader{
-    font-size: 20pt;
-  
-  }
+    .hours-info-heading{
+      min-width:200px;
+    }
+    .services{
+      height:350vh;
+      background-size: 4200px;
+    }
+    }
 
-  .bannerSpecials{
-    font-size: 14pt;
-  }
-  .bannerContact{
-    font-size: 14pt;
-  }
-  p{
-    font-size:12pt;
-  }
-}
-
-@media only screen and (max-width:539px){
-  .contacts1{
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 1em;
-    grid-row-gap: 100px;
-  }
-  .footer{
-    height: 850px;
-  }
-  h4{
-    padding-left: 0px;
-  }
-
-  .bannerSpecials{
-    font-size: 12pt;
-  }
-  .bannerContact{
-    font-size: 12pt;
-  }
-}

@@ -1,106 +1,58 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import axios from 'axios';
 
-export default class Contacts extends Component {
-  constructor(props) {
-    super(props);
+export default function Contact() {
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
 
-    this.onChangeEmail = this.onChangeEmail.bind(this);
-    this.onChangeSubject = this.onChangeSubject.bind(this);
-    this.onChangeMessage = this.onChangeMessage.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-
-    this.state = {
-      email: '',
-      subject: '',
-      message: '',
-    }
-  }
-
-  onChangeEmail(e) {
-    this.setState({
-      email: e.target.value
-    })
-  }
-
-  onChangeSubject(e) {
-    this.setState({
-      subject: e.target.value
-    })
-  }
-
-  onChangeMessage(e) {
-    this.setState({
-      message: e.target.value
-    })
-  }
-
-  onSubmit(e) {
-    e.preventDefault();
+  const submitHandler = async (e) =>{
+    e.prevenDefault();
 
     const messageForm = {
-      email: this.state.email,
-      phone: this.state.phone,
-      message: this.state.message
+      email,
+      phone,
+      message
     }
 
-    axios.post("/email", messageForm)
-      .then(res => console.log(res.data))
+    const {data} = await axios.post('/email', messageForm)
 
-    window.location = "/message"
-
-
-
-
+    if(data == "Email has been sent!"){
+      window.location="/message";
+    } else{
+      alert('There was a problem...');
+    }
   }
-  render() {
-    return (
-      <div className="m-auto contacts" id="contact">
-        <div data-aos="fade-up" data-aos-duration="2000"
-          style={{ textAlign: "center", fontSize: "14pt", color: "white" }}
-          className="row"
-        >
-          <div className=" col-md-4 col-sm-6">
-            <h1>Call Us</h1>
-            <h4>(630) 580-9027</h4>
-            <br></br>
-            <img
-              style={{ width: "300px" }}
-              src={process.env.PUBLIC_URL + "/assets/outside1.jpg"}
-              alt="outside-salon"
-            />
-          </div>
-          <div className="col-md-4 col-sm-6 ">
-            <h1 style={{ paddingLeft: "18px" }}>Find Us</h1>
-            <h4>Studio 786 salon is conveniently located on Roosevelt Road towards Naperville Road</h4>
-            <br></br>
-            <h4>1728 East Roosevelt Road</h4>
-            <h4>Wheaton, IL 60187</h4>
-          </div>
-          <div className="col-md-4 col-sm-6 ">
-            <h1>E-mail Us</h1>
-            <form onSubmit={this.onSubmit}>
+  return (
+    <div className="contacts" id="contact">
+        <div className="contact-details">
+          <h1>Contact Us</h1>
+          <p>1728 E Roosevelt Rd, Wheaton, IL 60187, USA</p>
+          <p>studio786inquiry@gmail.com</p>
+          <p>(630) 580-8027</p>
+        </div>
+
+            <form onSubmit={submitHandler}>
+              <h1>E-mail Us</h1>
               <div >
                 <label>E-mail address</label>
                 <br></br>
-                <input id="email" type="email" value={this.state.email} onChange={this.onChangeEmail} className="form-control-md" />
+                <input id="email" type="email" name="email" onChange={(e) =>setEmail(e.target.value)} />
               </div>
               <div>
                 <label>Subject</label>
                 <br></br>
-                <input id="Subject" value={this.state.phone} onChange={this.onChangeSubject} className="form-control-md" />
+                <input id="subject"  name="subject" onChange={(e)=>setPhone(e.target.value)}  />
               </div>
               <div>
                 <label>Message</label>
                 <br></br>
-                <textarea value={this.state.message} onChange={this.onChangeMessage} style={{ display: "flexbox" }} className="form-control-md textArea" id="message" placeholder="Type your message here" rows="5"></textarea>
+                <textarea onChange={(e)=>setMessage(e.target.value)} style={{ display: "flexbox" }} className="textArea" id="message" placeholder="Type your message here" rows="5"></textarea>
               </div>
-              <button type="submit" className="btn btn-primary">Send</button>
+              <button type="submit" >Send</button>
 
             </form>
           </div>
-        </div>
-      </div>
-    );
-  }
+  )
 }
+
